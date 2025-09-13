@@ -9,8 +9,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Connexion à MongoDB
-mongoose.connect('mongodb://localhost:27017/inventaires', {
+// Connect to MongoDB
+const mongoURI = 'mongodb://localhost:27017/inventaires';
+mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log('Connecté à MongoDB')).catch(err => console.error(err));
